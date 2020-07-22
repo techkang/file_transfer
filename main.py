@@ -2,8 +2,7 @@ import os
 from collections import deque, defaultdict
 from pathlib import Path
 
-from flask import Flask
-from flask import request, render_template, flash, send_file, redirect, url_for
+from flask import Flask, request, render_template, flash, send_file, redirect, url_for
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = '/home/kang/file_transfer/file_received'
