@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<style>
+    input.search {
+        width: 5em;
+        height: 2em;
+    }
+</style>
+
+<head>
+    <title>File Transfer</title>
+</head>
+<body>
+<h2>Welcome: {{ username }}</h2><br>
+<form method="POST" enctype="multipart/form-data">
+    <label>clipboard</label><br>
+    <textarea name="info" rows="4" cols="50"></textarea>
+    <br>
+    <input type="file" name="file"> <br><br>
+    <input class="search" type="submit" name="submit_button" value="enter">
+</form>
+<h2>history info:</h2><br>
+<ol>
+    {% for info in all_info %}
+        {% if info.startswith('http') %}
+            <li><a href=" {{ info }} "> {{ info }} </a></li>
+        {% else %}
+            <li>{{ info }}</li>
+        {% endif %}
+    {% endfor %}
+</ol><br>
+<h2>history file</h2><br>
+<ol>
+    {% for file in files %}
+    <li><a href=" {{ url_for('download', filename=file.name) }}" download>{{ file.name }}</a> </li>
+    {% endfor %}
+</ol>
+<h2>clear all</h2>
+clear all info and rm all files in server<br>
+<a href=" {{ url_for('reset', username=username) }}">clear all</a>
+
+
+</body>
+</html>
