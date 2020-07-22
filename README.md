@@ -4,7 +4,7 @@ A simple file transfer tool.
 # usage
 
     pip install flask werkzeug
-    export $user_python="$(which python)"
+    export user_python="$(which python)"
     sudo $user_python main.py
 
 # run on background
