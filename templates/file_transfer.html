@@ -32,7 +32,7 @@
 <h2>history file</h2><br>
 <ol>
     {% for file in files %}
-    <li><a href=" {{ url_for('download', filename=file.name) }}" download>{{ file.name }}</a> </li>
+    <li><a href=" {{ url_for('download', username=username, filename=file.name) }}" download>{{ file.name }}</a> </li>
     {% endfor %}
 </ol>
 <h2>clear all</h2>

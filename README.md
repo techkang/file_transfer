@@ -5,13 +5,13 @@ A simple file transfer tool.
 
     pip install flask werkzeug
     export user_python="$(which python)"
-    sudo $user_python main.py
+    sudo $user_python app.py
 
 ## run on background
 Usually, we want to run this scripts on background. You can using 
 following command.
 
-    nohup $user_python main.py > /dev/null 2>&1 &
+    nohup sudo $user_python app.py > /dev/null 2>&1 &
     
 ## run on boot
 If you are using Ubuntu 18.04 or latter, you can add your command 
